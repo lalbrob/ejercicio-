@@ -181,45 +181,47 @@ const persons = [
   /**
 
 
-// EJERCICIO 1: Número total de infectados del array de personas
+EJERCICIO 1: Número total de infectados del array de personas
 const infectadosPersonas = persons.filter(p => p.infected).length;
 console.log('Infectados (personas):', infectadosPersonas);
 
-// EJERCICIO 2: Número total de sanos
+EJERCICIO 2: Número total de sanos
 const sanos = persons.filter(p => !p.infected).length;
 console.log('Sanos:', sanos);
 
-// EJERCICIO 3: Total de infectados por países
+EJERCICIO 3: Total de infectados por países
 const totalInfectadosPaises = countries.reduce((acc, c) => acc + c.infected, 0);
 console.log('Infectados (paises):', totalInfectadosPaises);
 
-// EJERCICIO 4: País con más infectados
-const paisMasInfectado = countries.reduce((max, c) => c.infected > max.infected ? c : max);
+EJERCICIO 4: País con más infectados
+const paisMasInfectado = countries.reduce((max, c) => c.infected > magit add README.md
+git commit -m "Actualizar README.md"
+git pushx.infected ? c : max);
 console.log('País con más infectados:', paisMasInfectado.name);
 
-// EJERCICIO 5: Array con el nombre de todas las mascotas
+EJERCICIO 5: Array con el nombre de todas las mascotas
 const nombresMascotas = pets.map(p => p.name);
 console.log('Nombres de mascotas:', nombresMascotas);
 
-// EJERCICIO 6: Array con las personas infectadas
+EJERCICIO 6: Array con las personas infectadas
 const personasInfectadas = persons.filter(p => p.infected);
 console.log('Personas infectadas:', personasInfectadas);
 
-// EJERCICIO 7: Array de españoles con perro
+EJERCICIO 7: Array de españoles con perro
 const espanolesConPerro = persons.filter(p => 
   p.country === 'ES' && 
   pets.find(m => m.name === p.pet && m.type === 'perro')
 );
 console.log('Españoles con perro:', espanolesConPerro);
 
-// EJERCICIO 8: Personas con objeto mascota incluido
+EJERCICIO 8: Personas con objeto mascota incluido
 const personasConMascota = persons.map(p => ({
   ...p,
   petData: pets.find(m => m.name === p.pet)
 }));
 console.log('Personas con datos de mascota:', personasConMascota);
 
-// EJERCICIO 9: Animal que más personas tienen como mascota
+EJERCICIO 9: Animal que más personas tienen como mascota
 const conteoMascotas = {};
 persons.forEach(p => {
   const tipo = pets.find(m => m.name === p.pet)?.type;
@@ -228,7 +230,7 @@ persons.forEach(p => {
 const animalFavorito = Object.entries(conteoMascotas).reduce((max, curr) => curr[1] > max[1] ? curr : max);
 console.log('Animal más común como mascota:', animalFavorito[0]);
 
-// EJERCICIO 10: Número total de patas de mascotas
+EJERCICIO 10: Número total de patas de mascotas
 const totalPatas = persons.reduce((acc, p) => {
   const tipoMascota = pets.find(m => m.name === p.pet)?.type;
   const patas = animals.find(a => a.kind === tipoMascota)?.legs || 0;
@@ -236,7 +238,7 @@ const totalPatas = persons.reduce((acc, p) => {
 }, 0);
 console.log('Total de patas de las mascotas de las personas:', totalPatas);
 
-// EJERCICIO 11: Personas con animales de 4 patas
+EJERCICIO 11: Personas con animales de 4 patas
 const personasCon4Patas = persons.filter(p => {
   const tipo = pets.find(m => m.name === p.pet)?.type;
   const patas = animals.find(a => a.kind === tipo)?.legs;
@@ -244,13 +246,14 @@ const personasCon4Patas = persons.filter(p => {
 });
 console.log('Personas con mascotas de 4 patas:', personasCon4Patas);
 
-// EJERCICIO 12: Personas no infectadas de 'España'
+EJERCICIO 12: Personas no infectadas de 'España'
 const personasNoInfectadasEsp = persons.filter(p => p.country === 'ES' && !p.infected);
 console.log('Personas no infectadas de España:', personasNoInfectadasEsp);
 
-// EJERCICIO 13: Países con personas que tienen loros
+ EJERCICIO 13: Países con personas que tienen loros 
 const paisesConLoros = persons
   .filter(p => pets.find(m => m.name === p.pet)?.type === 'loro')
+
   .map(p => countries.find(c => c.code === p.country)?.name)
   .filter((name, i, arr) => name && arr.indexOf(name) === i);
 console.log('Países con personas con loros:', paisesConLoros);
